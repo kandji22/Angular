@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "monAngence"
+    }
+  },
+  "defaultProject": "monAngence",
+  "cli": {
+    "analytics": "6ed72342-06c7-4edd-9620-3c4e7a8b78e7"
+  }
 }

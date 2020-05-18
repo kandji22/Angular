@@ -1,0 +1,26 @@
+<div class="container py-5 ">
+  <h1 class="display-4"> Nos Biens Immobiliers</h1>
+  <div class="row mt-5">
+    <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let properti of properties;let id=index">
+      <div class="card h-100" style="width: 18rem;">
+        <div *ngFor="let photo of properti.photos;let first=first">
+          <img [src]="photo" *ngIf='first' class="card-img-top" [alt]="photo.name">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{properti.title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{properti.category}}</h6>
+          <p class="card-text">
+            {{ properti.category }}<span *ngIf="properti.surface && properti.surface !== ''"> de {{ properti.surface }} m²</span><span *ngIf="properti.rooms && properti.rooms !== ''">, {{ properti.rooms }} pièce(s)</span>.
+          </p>
+          <p [ngStyle]="{color:getSolvalue(id)}">
+            <span *ngIf="properti.sold">A vendre </span>
+            <span *ngIf="!properti.sold">Vendu </span>
+          </p>
+          <div class="text-center">
+            <button class="btn btn-primary" type ="button" [routerLink]="['/property',id]">Voir ce bien</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
